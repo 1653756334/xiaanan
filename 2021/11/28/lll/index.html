@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Map | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="一、Map的实现类的结构：Map:双列数据，存储key-value对的数据   —类似于高中的函数：y &#x3D; f(x)  HashMap:作为Map的主要实现类；线程不安全的，效率高；存储null的key和value  LinkedHashMap:保证在遍历map元素时，可以按照添加的顺序实现遍历。  原因：在原有的HashMap底层结构基础上，添加了一对指针，指向前一个和后一个元素。  对于频繁的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Map">
+<meta property="og:url" content="http://example.com/2021/11/28/lll/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、Map的实现类的结构：Map:双列数据，存储key-value对的数据   —类似于高中的函数：y &#x3D; f(x)  HashMap:作为Map的主要实现类；线程不安全的，效率高；存储null的key和value  LinkedHashMap:保证在遍历map元素时，可以按照添加的顺序实现遍历。  原因：在原有的HashMap底层结构基础上，添加了一对指针，指向前一个和后一个元素。  对于频繁的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-27T16:04:12.000Z">
+<meta property="article:modified_time" content="2021-11-27T16:51:52.863Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -69,9 +73,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-lll" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-lll" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/11/28/lll/" class="article-date">
   <time class="dt-published" datetime="2021-11-27T16:04:12.000Z" itemprop="datePublished">2021-11-28</time>
@@ -84,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/28/lll/">Map</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Map
     </h1>
   
 
@@ -200,55 +202,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Collection-Iterator" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/16/Collection-Iterator/" class="article-date">
-  <time class="dt-published" datetime="2021-11-16T13:08:04.000Z" itemprop="datePublished">2021-11-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/16/Collection-Iterator/">Collection-Iterator</a>
-    </h1>
+    <a href="/2021/11/16/Collection-Iterator/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Collection-Iterator</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Collection的遍历-–-Iterator"><a href="#Collection的遍历-–-Iterator" class="headerlink" title="Collection的遍历 – Iterator"></a>Collection的遍历 – Iterator</h3><p><strong>使用iterator遍历数组</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Collection col1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">col1.add(<span class="number">123</span>);</span><br><span class="line">col1.add(<span class="number">3456</span>);</span><br><span class="line">col1.add(<span class="keyword">new</span> Person(<span class="string">&quot;lili&quot;</span>, <span class="number">19</span>));</span><br><span class="line">col1.add(<span class="keyword">new</span> String(<span class="string">&quot;Tom&quot;</span>));</span><br><span class="line">col1.add(<span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line">Iterator iter = col1.iterator();</span><br><span class="line"><span class="keyword">while</span> (iter.hasNext()) &#123;</span><br><span class="line">    System.out.println(iter.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用iterator删除元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Iterator iterator = col1.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">    Object obj = iterator.next();</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&quot;Tom&quot;</span>.equals(obj)) &#123;</span><br><span class="line">        iterator.remove();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Iterator iter = col1.iterator();</span><br><span class="line"><span class="keyword">while</span> (iter.hasNext()) &#123;</span><br><span class="line">    System.out.println(iter.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/16/Collection-Iterator/" data-id="ckwi1x2xf0000gkvf456zghzk" data-title="Collection-Iterator" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
